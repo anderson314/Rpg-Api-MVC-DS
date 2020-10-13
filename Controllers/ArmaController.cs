@@ -48,6 +48,8 @@ namespace RpgMvc.Controllers
             await Task.Run(() => 
                 JsonConvert.DeserializeObject<List<ArmaViewModel>>(serialized));
 
+            TempData["Mensagem"] = string.Format("Arma {0} salva com sucesso!", a.Nome);
+
             return RedirectToAction("Index");
         }
 
@@ -67,7 +69,6 @@ namespace RpgMvc.Controllers
         }
 
         //Carregará a View após pegar todos os dados da Arma
-        [HttpGet]
         public async Task<ActionResult> EditAsync(int id)
         {
             HttpClient httpClient = new HttpClient();
@@ -78,7 +79,7 @@ namespace RpgMvc.Controllers
             ArmaViewModel a = await Task.Run(() => 
                 JsonConvert.DeserializeObject<ArmaViewModel>(serialized));
             
-            return View();
+            return View(a);
         }
         //Enviará os dados para o Bando de dados
         [HttpPost]
@@ -90,13 +91,22 @@ namespace RpgMvc.Controllers
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             HttpResponseMessage response = await httpClient.PutAsync(uriBaseArma, content);
 
-            string serialized = await response.Content.ReadAsStringAsync();
-
-            await Task.Run(() => 
-                JsonConvert.DeserializeObject<ArmaViewModel>(serialized));
+            TempData["Mensagem"] = string.Format("Arma {0} atualizada com sucesso!", a.Nome);
 
             return RedirectToAction("Index");
         }
 
+
+        [HttpGet]
+        public async Task<ActionResult> DeleteAsync(int id)
+        {
+            HttpClient httpClient = new HttpClient();
+            
+            HttpResponseMessage response = await httpClient.DeleteAsync(uriBaseArma + id.ToString());
+
+            TempData["Mensagem"] = string.Format("Arma {0} deletada com sucesso!", id);
+
+            return RedirectToAction("Index");
+        }
     }
 }
