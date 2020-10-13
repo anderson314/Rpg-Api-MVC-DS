@@ -96,3 +96,7 @@ C:\Users\ander\Desktop\Curso Des. Sis\2° Modulo\Desenvolvimento de Sistemas\Pro
 C:\Users\ander\Desktop\Curso Des. Sis\2° Modulo\Desenvolvimento de Sistemas\Projeto RpgAPi\RpgMvc\obj\Debug\netcoreapp3.1\Razor\Views\Personagens\Create.cshtml.g.cs
 C:\Users\ander\Desktop\Curso Des. Sis\2° Modulo\Desenvolvimento de Sistemas\Projeto RpgAPi\RpgMvc\obj\Debug\netcoreapp3.1\Razor\Views\Personagens\Details.cshtml.g.cs
 C:\Users\ander\Desktop\Curso Des. Sis\2° Modulo\Desenvolvimento de Sistemas\Projeto RpgAPi\RpgMvc\obj\Debug\netcoreapp3.1\Razor\Views\Personagens\Edit.cshtml.g.cs
+C:\Users\ander\Desktop\Curso Des. Sis\2° Modulo\Desenvolvimento de Sistemas\Projeto RpgAPi\RpgMvc\obj\Debug\netcoreapp3.1\Razor\Views\Arma\Index.cshtml.g.cs
+C:\Users\ander\Desktop\Curso Des. Sis\2° Modulo\Desenvolvimento de Sistemas\Projeto RpgAPi\RpgMvc\obj\Debug\netcoreapp3.1\Razor\Views\Arma\Create.cshtml.g.cs
+C:\Users\ander\Desktop\Curso Des. Sis\2° Modulo\Desenvolvimento de Sistemas\Projeto RpgAPi\RpgMvc\obj\Debug\netcoreapp3.1\Razor\Views\Arma\Details.cshtml.g.cs
+C:\Users\ander\Desktop\Curso Des. Sis\2° Modulo\Desenvolvimento de Sistemas\Projeto RpgAPi\RpgMvc\obj\Debug\netcoreapp3.1\Razor\Views\Arma\Edit.cshtml.g.cs
