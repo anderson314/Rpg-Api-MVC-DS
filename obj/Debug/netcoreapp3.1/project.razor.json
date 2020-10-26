@@ -14447,6 +14447,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ander\\Desktop\\Curso Des. Sis\\2° Modulo\\Desenvolvimento de Sistemas\\Projeto RpgAPi\\RpgMvc\\Views\\Usuarios\\CadastrarUsuario.cshtml",
+      "TargetPath": "Views\\Usuarios\\CadastrarUsuario.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ander\\Desktop\\Curso Des. Sis\\2° Modulo\\Desenvolvimento de Sistemas\\Projeto RpgAPi\\RpgMvc\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -14474,16 +14479,6 @@
     {
       "FilePath": "c:\\Users\\ander\\Desktop\\Curso Des. Sis\\2° Modulo\\Desenvolvimento de Sistemas\\Projeto RpgAPi\\RpgMvc\\Views\\Personagens\\Edit.cshtml",
       "TargetPath": "Views\\Personagens\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ander\\Desktop\\Curso Des. Sis\\2° Modulo\\Desenvolvimento de Sistemas\\Projeto RpgAPi\\RpgMvc\\Views\\Usuario\\AutenticarUsuario.cshtml",
-      "TargetPath": "Views\\Usuario\\AutenticarUsuario.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ander\\Desktop\\Curso Des. Sis\\2° Modulo\\Desenvolvimento de Sistemas\\Projeto RpgAPi\\RpgMvc\\Views\\Usuario\\CadastrarUsuario.cshtml",
-      "TargetPath": "Views\\Usuario\\CadastrarUsuario.cshtml",
       "FileKind": "mvc"
     }
   ],
