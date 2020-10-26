@@ -50,5 +50,42 @@ namespace RpgMvc.Controllers
             }
         }
 
+        //Método respondável por carregar a View de Autenticar usuário
+        [HttpGet]
+        public ActionResult IndexLogin()
+        {
+            return("AutenticarUsuario");
+        }
+
+        //Método responsável por enviar os dados de login via Post
+        [HttpPost]
+        public async Task<ActionResult> AutenticarAsync(UsuarioViewModel u)
+        {
+            HttpClient httpClient = new HttpClient();
+            string uriComplementar = "Autenticar";
+
+            var content = new StringContent(JsonConvert.SerializeObject(u));
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            HttpResponseMessage response = await httpClient.PostAsync(uriBase + uriComplementar, content);
+
+            string serialized = await response.Content.ReadAsStringAsync();
+            int id = 0;
+
+            if(!int.TryParse(serialized, out id))
+            {
+                //TryParse: tenta converter o retorno da requisição pra inteiro. Entrará aqui se não conseguir
+                TempData["MensagemErro"];
+                return IndexLogin();
+            }
+            else
+            {
+                //Caso o retorno seja um número inteiro, estará armazenado em Id
+                TempData["Mensagem"] = 
+                    string.Format("Bem-vindo {0}!!!" u.Username);
+                return RedirectToAction("Index", "Personagens");
+            }
+        }
+
+
     }
 }
