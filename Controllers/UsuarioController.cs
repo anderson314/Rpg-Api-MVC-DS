@@ -54,7 +54,7 @@ namespace RpgMvc.Controllers
         [HttpGet]
         public ActionResult IndexLogin()
         {
-            return("AutenticarUsuario");
+            return View("AutenticarUsuario");
         }
 
         //Método responsável por enviar os dados de login via Post
@@ -74,14 +74,14 @@ namespace RpgMvc.Controllers
             if(!int.TryParse(serialized, out id))
             {
                 //TryParse: tenta converter o retorno da requisição pra inteiro. Entrará aqui se não conseguir
-                TempData["MensagemErro"];
+                TempData["MensagemErro"] = serialized;
                 return IndexLogin();
             }
             else
             {
                 //Caso o retorno seja um número inteiro, estará armazenado em Id
                 TempData["Mensagem"] = 
-                    string.Format("Bem-vindo {0}!!!" u.Username);
+                    string.Format("Bem-vindo, {0}!!!", u.Username);
                 return RedirectToAction("Index", "Personagens");
             }
         }
