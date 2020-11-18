@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using RpgMvc.Models;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
+using Microsoft.AspNetCore.Http;
 
 namespace RpgMvc.Controllers
 {
@@ -18,6 +19,10 @@ namespace RpgMvc.Controllers
                string uriComplementar = "GetAll";
 
                HttpClient httpClient = new HttpClient();
+
+               string token = HttpContext.Session.GetString("SessionTokenUsuario");
+               httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+               
                HttpResponseMessage response = await httpClient.GetAsync(uriBase + uriComplementar);
 
                 string serialized = await response.Content.ReadAsStringAsync();

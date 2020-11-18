@@ -1,6 +1,7 @@
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using RpgMvc.Models;
@@ -32,21 +33,18 @@ namespace RpgMvc.Controllers
             HttpResponseMessage response = await httpClient.PostAsync(uriBase + uriComplementar, content);
 
             string serialized = await response.Content.ReadAsStringAsync();
-            int id = 0;
 
-            if(!int.TryParse(serialized, out id))
+            if(response.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                //TryParse: Tenta converter o retorno da requisição para inteiro. Entrará aqui se não conseguir
-                TempData["MensagemErro"] = serialized;
-                return RedirectToAction("Index");
+                TempData["Mensagem"] = 
+                    string.Format("Usuário {0} registrado com sucesso! Faça o login para acessar.", u.Username);
+
+                return View("AutenticarUsuario");
             }
             else
             {
-                //Caso o retorno seja um número inteiro, estará armazenado em Id
-                TempData["Mensagem"] = 
-                string.Format("Usuário Id {0} registrado com sucesso. Faça login para acessar.", id);
-
-                return View("AutenticarUsuario");
+                TempData["MensagemErro"] = serialized; 
+                return RedirectToAction("Index");
             }
         }
 
@@ -69,20 +67,20 @@ namespace RpgMvc.Controllers
             HttpResponseMessage response = await httpClient.PostAsync(uriBase + uriComplementar, content);
 
             string serialized = await response.Content.ReadAsStringAsync();
-            int id = 0;
+           
 
-            if(!int.TryParse(serialized, out id))
+            if(response.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                //TryParse: tenta converter o retorno da requisição pra inteiro. Entrará aqui se não conseguir
-                TempData["MensagemErro"] = serialized;
-                return IndexLogin();
+                HttpContext.Session.SetString("SessionTokenUsuario", serialized);
+
+                TempData["Mensagem"] = string.Format("Bem-vindo {0}!", u.Username);
+                return RedirectToAction("Index", "Personagens");
+
             }
             else
             {
-                //Caso o retorno seja um número inteiro, estará armazenado em Id
-                TempData["Mensagem"] = 
-                    string.Format("Bem-vindo, {0}!!!", u.Username);
-                return RedirectToAction("Index", "Personagens");
+                TempData["MensagemErro"] = serialized; 
+                return IndexLogin();
             }
         }
 
