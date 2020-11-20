@@ -14427,6 +14427,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ander\\Desktop\\Curso Des. Sis\\2° Modulo\\Desenvolvimento de Sistemas\\Projeto RpgAPi\\RpgMvc\\Views\\PersonagemHabilidades\\Index.cshtml",
+      "TargetPath": "Views\\PersonagemHabilidades\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ander\\Desktop\\Curso Des. Sis\\2° Modulo\\Desenvolvimento de Sistemas\\Projeto RpgAPi\\RpgMvc\\Views\\Personagens\\Index.cshtml",
       "TargetPath": "Views\\Personagens\\Index.cshtml",
       "FileKind": "mvc"

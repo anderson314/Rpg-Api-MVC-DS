@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using RpgMvc.Models.Enuns;
 
 namespace RpgMvc.Models
@@ -11,5 +12,7 @@ namespace RpgMvc.Models
         public int Defesa { get; set; }
         public int Inteligencia { get; set; }
         public ClasseEnum Classe { get; set; }
+        public List<PersonagemHabilidadesViewModel> PersonagemHabilidades { get; set; }
+
     }
 }
