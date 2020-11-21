@@ -92,5 +92,29 @@ namespace RpgMvc.Controllers
             
             return View(ph);       
         }
+
+        //Método responsável por
+        [HttpPost]
+        public async Task<ActionResult> CreateAsync(PersonagemHabilidadesViewModel ph)
+        {
+            HttpClient httpClient = new HttpClient();
+
+            string token = HttpContext.Session.GetString("SessionTokenUsuario");
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            var content = new StringContent(JsonConvert.SerializeObject(ph));
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            HttpResponseMessage response = await httpClient.PostAsync(uriBase, content);
+
+            string serialized = await response.Content.ReadAsStringAsync();
+
+            if(response.StatusCode == System.Net.HttpStatusCode.OK)
+                TempData["Mensagem"] = "Habilidade cadastrada com sucesso";
+            else
+
+            TempData["MensagemErro"] = serialized;
+
+            return RedirectToAction("Index", "PersonagemHabilidades" , new {id = ph.PersonagemId});
+        }
     }
 }

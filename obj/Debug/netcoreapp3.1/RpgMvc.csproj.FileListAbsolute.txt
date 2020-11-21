@@ -103,3 +103,5 @@ C:\Users\ander\Desktop\Curso Des. Sis\2° Modulo\Desenvolvimento de Sistemas\Pro
 C:\Users\ander\Desktop\Curso Des. Sis\2° Modulo\Desenvolvimento de Sistemas\Projeto RpgAPi\RpgMvc\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartialRpg.cshtml.g.cs
 C:\Users\ander\Desktop\Curso Des. Sis\2° Modulo\Desenvolvimento de Sistemas\Projeto RpgAPi\RpgMvc\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\CadastrarUsuario.cshtml.g.cs
 C:\Users\ander\Desktop\Curso Des. Sis\2° Modulo\Desenvolvimento de Sistemas\Projeto RpgAPi\RpgMvc\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\AutenticarUsuario.cshtml.g.cs
+C:\Users\ander\Desktop\Curso Des. Sis\2° Modulo\Desenvolvimento de Sistemas\Projeto RpgAPi\RpgMvc\obj\Debug\netcoreapp3.1\Razor\Views\PersonagemHabilidades\Create.cshtml.g.cs
+C:\Users\ander\Desktop\Curso Des. Sis\2° Modulo\Desenvolvimento de Sistemas\Projeto RpgAPi\RpgMvc\obj\Debug\netcoreapp3.1\Razor\Views\PersonagemHabilidades\Index.cshtml.g.cs
